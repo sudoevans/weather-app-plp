@@ -1,0 +1,30 @@
+{% extends 'weather/base.html' %}
+
+{% block content %}
+<div class="weather-card">
+    <div class="city">{{ weather.city }},{{ weather.country }}</div>
+    <div class="temperature">{{ weather.temperature }}°C</div>
+    
+    <div class="weather-icon">
+        <img src="https://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" 
+             alt="{{ weather.description }}">
+        <p>{{ weather.description|capfirst }}</p>
+    </div>
+    
+    <div class="details">
+        <div class="detail">
+            <div class="label">Feels Like</div>
+            <div class="value">{{ weather.feels_like }}°C</div>
+        </div>
+        <div class="detail">
+            <div class="label">Humidity</div>
+            <div class="value">{{ weather.humidity }}%</div>
+        </div>
+        <div class="detail">
+            <div class="label">Wind</div>
+            <div class="value">{{ weather.wind_speed }} m/s</div>
+        </div>
+    </div>
+</div>
+<a href="/" class="back-btn">Back to Search</a>
+{% endblock %}

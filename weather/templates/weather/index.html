@@ -1,0 +1,9 @@
+{% extends 'weather/base.html' %}
+
+{% block content %}
+<div class="search-container">
+    <input type="text" id="city-search" placeholder="Enter city name" autocomplete="off">
+    <button id="search-btn">Search</button>
+</div>
+<div id="autocomplete-suggestions" class="autocomplete-suggestions"></div>
+{% endblock %}
